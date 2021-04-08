@@ -4,9 +4,8 @@ import styled from "styled-components";
 import Accordion from "@material-ui/core/Accordion";
 import { AccordionSummary } from "@material-ui/core";
 import AccordionDetails from "@material-ui/core/AccordionDetails";
-import CheckIcon from "@material-ui/icons/Check";
-import CloseIcon from "@material-ui/icons/Close";
-import Pagination from "@material-ui/lab/Pagination";
+
+import AstroPagination from "./AstroPagination";
 
 const InfoWrapper = styled.div`
   width: 100%;
@@ -24,12 +23,19 @@ const StyledAccordionSummary = styled(AccordionSummary)`
     text-align: center;
     display: flex;
     align-items: center;
+    font-size: 30px;
+    font-family: "Lato";
+    font-weight: 300;
   }
 `;
 
 const ListDetails = styled.div`
   width: 100%;
   padding-left: 40px;
+  img {
+    min-width: 200px;
+    max-width: 300px;
+  }
   p {
     font-size: 20px;
     font-family: "Lato";
@@ -130,23 +136,12 @@ const PaginationWrapper = styled.div`
   align-items: center;
 `;
 
-const StyledPagination = styled.div`
-  color: white;
-  background-color: #fafafa;
-  padding: 30px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-`;
-
 export default function AstroInfo() {
   const [astro, setAstro] = useState([]);
-  const [offset, setOffset] = useState(0);
-  const [astroStatus, setAstroStatus] = useState();
 
   const obtenerDatos = async () => {
     const data = await fetch(
-      `https://ll.thespacedevs.com/2.0.0/astronaut?limit=15&offset=${offset}`
+      `https://ll.thespacedevs.com/2.0.0/astronaut?limit=15`
     );
     const astronauts = await data.json();
     setAstro(astronauts.results);
@@ -154,7 +149,7 @@ export default function AstroInfo() {
 
   useEffect(() => {
     obtenerDatos();
-  }, [offset]);
+  }, []);
 
   return (
     <InfoWrapper>
@@ -188,9 +183,7 @@ export default function AstroInfo() {
         ))}
       </AccordionWrapper>
       <PaginationWrapper>
-        <StyledPagination>
-          <Pagination count={10} />
-        </StyledPagination>
+        <AstroPagination />
       </PaginationWrapper>
     </InfoWrapper>
   );
