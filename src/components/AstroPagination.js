@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import Pagination from "@material-ui/lab/Pagination";
 import styled from "styled-components";
 
@@ -12,10 +12,15 @@ const StyledPagination = styled.div`
 `;
 
 const AstroPagination = () => {
+  const [page, setPage] = useState(1);
+  const handleChange = (event, value) => {
+    setPage(value);
+  };
+
   return (
     <div>
       <StyledPagination>
-        <Pagination count={10} />
+        <Pagination count={5} page={page} onChange={handleChange} />
       </StyledPagination>
     </div>
   );

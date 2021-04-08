@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from "react";
 import styled from "styled-components";
 
+import { obtenerDatos } from "../api/astro";
+
 import Accordion from "@material-ui/core/Accordion";
 import { AccordionSummary } from "@material-ui/core";
 import AccordionDetails from "@material-ui/core/AccordionDetails";
@@ -137,32 +139,35 @@ const PaginationWrapper = styled.div`
 `;
 
 export default function AstroInfo() {
-  const [astro, setAstro] = useState([]);
+  const [astro, setAstro] = useState({});
+  const [queries, setQueries] = useState("");
 
-  const obtenerDatos = async () => {
-    const data = await fetch(
-      `https://ll.thespacedevs.com/2.0.0/astronaut?limit=15`
-    );
-    const astronauts = await data.json();
-    setAstro(astronauts.results);
-  };
-
+  console.log(astro);
   useEffect(() => {
-    obtenerDatos();
-  }, []);
+    const setUp = async () => {
+      const datos = await obtenerDatos(queries);
+      if (datos) {
+        setAstro(datos);
+      }
+    };
+    setUp();
+  }, [queries]);
+
+  const onActiveButtonClick = () => setQueries("&status=1");
+  const onRetiredButtonClick = () => setQueries("&status=2");
 
   return (
     <InfoWrapper>
       <ButtonWrapper>
-        <ActiveButton>
+        <ActiveButton onClick={onActiveButtonClick}>
           <h4>ACTIVE</h4>
         </ActiveButton>
-        <RetiredButton>
+        <RetiredButton onClick={onRetiredButtonClick}>
           <h4>RETIRED</h4>
         </RetiredButton>
       </ButtonWrapper>
       <AccordionWrapper>
-        {astro.map(item => (
+        {astro?.results?.map(item => (
           <Accordion key={item.id.toString()}>
             <StyledAccordionSummary
               aria-controls='panel1a-content'
