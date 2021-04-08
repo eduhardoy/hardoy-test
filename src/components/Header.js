@@ -2,17 +2,39 @@ import React from 'react'
 import styled from 'styled-components';
 
 const StyledHeader = styled.div`
-  background: url("./images/space.png");
+  background: url("./images/space2.png");
+  filter: grayscale(0.4);
   background-size: cover;
   min-height: 100vh;
+  height: 100vh;
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  font-size: 60px;
+  color: #FBF2AF;
   text-align: center;
-
+  h1{
+    text-shadow: 0px 0px 7px rgba(219,75,69,0.92);
+  }
+  @media (max-width: 860px) {
+    align-items: flex-end;
+    font-size: 40px;
+    h1{
+      margin-bottom: 200px;
+    }
+  }
+  @media (max-width: 550px) {
+    font-size: 30px;
+    h1{
+      margin-bottom: 180px;
+    }
+  }
+  @media (max-width: 426px) {
+    font-size: 25px;
+    h1{
+      margin-bottom: 140px;
+    }
+  }
   img{
     position: absolute;
     top: 20px;
@@ -41,7 +63,7 @@ const Header = () => {
   return (
     <div>
       <StyledHeader>
-        <h1>ASTRONAUTS API</h1>
+        <h1>ASTRONAUTS</h1>
         <img src="./images/earth.png" className="App-logo" alt="logo" />
       </StyledHeader>
     </div>
