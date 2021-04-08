@@ -1,10 +1,10 @@
 # Compile and run instructions
 
-El proyecto fue arrancado con [Create React App](https://github.com/facebook/create-react-app).
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
 
-En el directorio del proyecto, puede ejecutar:
+In the project directory, you can run:
 
 ### `npm start`
 
