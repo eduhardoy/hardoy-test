@@ -9,8 +9,12 @@ describe("AstroInfo", () => {
     queries.debug();
     expect(true).toBe(true);
   });
-  // test("Title Render", () => {
-  //   const { getByTestId } = render(<Header />);
-  //   expect(getByTestId("title")).toBeInTheDocument();
-  // });
+});
+
+describe("Header", () => {
+  test("Should Render Header Component", () => {
+    const queries = render(<Header />);
+    queries.debug();
+    expect(true).toBe(true);
+  });
 });

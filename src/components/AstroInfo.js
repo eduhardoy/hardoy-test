@@ -119,7 +119,7 @@ const NumberButton = styled.button`
   font-weight: 500;
   outline: none;
   font-size: 15px;
-  background-color: #dc3545;
+  background-color: #343a40;
   color: white;
   text-transform: uppercase;
   display: flex;
@@ -129,12 +129,12 @@ const NumberButton = styled.button`
   border-radius: 5px;
   text-align: center;
   :hover {
-    background-color: #c82333;
+    background-color: #23272b;
     color: white;
   }
   :focus {
-    border: 3px solid #f2b1b8;
-    background-color: #dc3545;
+    border: 3px solid #b1b3b6;
+    background-color: #23272b;
   }
 `;
 
