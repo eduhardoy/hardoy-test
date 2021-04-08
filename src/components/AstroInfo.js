@@ -7,8 +7,6 @@ import Accordion from "@material-ui/core/Accordion";
 import { AccordionSummary } from "@material-ui/core";
 import AccordionDetails from "@material-ui/core/AccordionDetails";
 
-import AstroPagination from "./AstroPagination";
-
 const InfoWrapper = styled.div`
   width: 100%;
   display: flex;
@@ -25,8 +23,8 @@ const StyledAccordionSummary = styled(AccordionSummary)`
     text-align: center;
     display: flex;
     align-items: center;
-    font-size: 30px;
-    font-family: "Lato";
+    font-size: 35px;
+    font-family: "Roboto";
     font-weight: 300;
   }
 `;
@@ -40,7 +38,7 @@ const ListDetails = styled.div`
   }
   p {
     font-size: 20px;
-    font-family: "Lato";
+    font-family: "Roboto";
   }
 `;
 
@@ -114,6 +112,32 @@ const RetiredButton = styled.button`
   }
 `;
 
+const NumberButton = styled.button`
+  width: 40px;
+  margin: 10px;
+  height: 40px;
+  font-weight: 500;
+  outline: none;
+  font-size: 15px;
+  background-color: #dc3545;
+  color: white;
+  text-transform: uppercase;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  border-radius: 5px;
+  text-align: center;
+  :hover {
+    background-color: #c82333;
+    color: white;
+  }
+  :focus {
+    border: 3px solid #f2b1b8;
+    background-color: #dc3545;
+  }
+`;
+
 const AccordionWrapper = styled.div`
   width: 60%;
   display: flex;
@@ -128,14 +152,6 @@ const AccordionWrapper = styled.div`
     flex-direction: column;
     text-align: center;
   }
-`;
-
-const PaginationWrapper = styled.div`
-  width: 50%;
-  padding: 20px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
 `;
 
 export default function AstroInfo() {
@@ -155,6 +171,12 @@ export default function AstroInfo() {
 
   const onActiveButtonClick = () => setQueries("&status=1");
   const onRetiredButtonClick = () => setQueries("&status=2");
+
+  const onePageButtonClick = () => setQueries(`&offset=`);
+  const twoPageButtonClick = () => setQueries(`&offset=10`);
+  const threePageButtonClick = () => setQueries(`&offset=20`);
+  const fourPageButtonClick = () => setQueries(`&offset=30`);
+  const fivePageButtonClick = () => setQueries(`&offset=40`);
 
   return (
     <InfoWrapper>
@@ -187,9 +209,23 @@ export default function AstroInfo() {
           </Accordion>
         ))}
       </AccordionWrapper>
-      <PaginationWrapper>
-        <AstroPagination />
-      </PaginationWrapper>
+      <ButtonWrapper>
+        <NumberButton onClick={onePageButtonClick}>
+          <h4>1</h4>
+        </NumberButton>
+        <NumberButton onClick={twoPageButtonClick}>
+          <h4>2</h4>
+        </NumberButton>
+        <NumberButton onClick={threePageButtonClick}>
+          <h4>3</h4>
+        </NumberButton>
+        <NumberButton onClick={fourPageButtonClick}>
+          <h4>4</h4>
+        </NumberButton>
+        <NumberButton onClick={fivePageButtonClick}>
+          <h4>5</h4>
+        </NumberButton>
+      </ButtonWrapper>
     </InfoWrapper>
   );
 }
