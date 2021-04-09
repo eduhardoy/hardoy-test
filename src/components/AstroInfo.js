@@ -14,7 +14,7 @@ import {
   RetiredButton,
   NumberButton,
   AccordionWrapper,
-} from "./styles";
+} from "../styles/astroInfoStyles";
 
 const StyledAccordionSummary = styled(AccordionSummary)`
   display: flex;
