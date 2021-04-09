@@ -16,20 +16,20 @@ Instalar las dependencias con:
 
 //
 
-Para hacer una build para produccion ejecutar el comando de:
+- Para hacer una build para produccion ejecutar el comando de:
 
 ### `npm run build`
 
 //
 
-Para ejecutar la aplicacion en modo test:
+- Para ejecutar la aplicacion en modo test:
 
 ### `npm run test`
 
-- En caso de no correr los test apretar la letra "a".
+\*En caso de no correr los test apretar la letra "a".
 
 //
 
-Para ejecutar la aplicacion en modo de desarrollo:
+- Para ejecutar la aplicacion en modo de desarrollo:
 
 ### `npm run start`
