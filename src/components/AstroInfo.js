@@ -1,33 +1,20 @@
 import React, { useEffect, useState } from "react";
-import styled from "styled-components";
 
 import { obtenerDatos } from "../api/astro";
 
 import Accordion from "@material-ui/core/Accordion";
-import { AccordionSummary } from "@material-ui/core";
 import AccordionDetails from "@material-ui/core/AccordionDetails";
 import {
   InfoWrapper,
-  ListDetails,
   ButtonWrapper,
   ActiveButton,
   RetiredButton,
-  NumberButton,
   AccordionWrapper,
+  StyledAccordionSummary,
+  ListDetails,
+  NumberButton,
 } from "../styles/astroInfoStyles";
 
-const StyledAccordionSummary = styled(AccordionSummary)`
-  display: flex;
-  align-items: center;
-  h2 {
-    text-align: center;
-    display: flex;
-    align-items: center;
-    font-size: 35px;
-    font-family: "Roboto";
-    font-weight: 300;
-  }
-`;
 
 export default function AstroInfo() {
   const [astro, setAstro] = useState({});
@@ -47,11 +34,11 @@ export default function AstroInfo() {
   const onActiveButtonClick = () => setQueries("&status=1");
   const onRetiredButtonClick = () => setQueries("&status=2");
 
-  const onePageButtonClick = () => setQueries(`&offset=`);
-  const twoPageButtonClick = () => setQueries(`&offset=10`);
-  const threePageButtonClick = () => setQueries(`&offset=20`);
-  const fourPageButtonClick = () => setQueries(`&offset=30`);
-  const fivePageButtonClick = () => setQueries(`&offset=40`);
+  const onePageButtonClick = () => setQueries("&offset=");
+  const twoPageButtonClick = () => setQueries("&offset=10");
+  const threePageButtonClick = () => setQueries("&offset=20");
+  const fourPageButtonClick = () => setQueries("&offset=30");
+  const fivePageButtonClick = () => setQueries("&offset=40");
 
   return (
     <InfoWrapper>
@@ -75,10 +62,10 @@ export default function AstroInfo() {
             <AccordionDetails>
               <ListDetails>
                 <img src={item.profile_image} alt='' />
-                <p>Name: {item.name}</p>
-                <p>Date of Birth: {item.date_of_birth}</p>
-                <p>Nationality: {item.nationality}</p>
-                <p>Agency: {item.agency.name}</p>
+                <p><strong>Name:</strong> {item.name}</p>
+                <p><strong>Date of Birth:</strong> {item.date_of_birth}</p>
+                <p><strong>Nationality:</strong> {item.nationality}</p>
+                <p><strong>Agency:</strong> {item.agency.name}</p>
               </ListDetails>
             </AccordionDetails>
           </Accordion>

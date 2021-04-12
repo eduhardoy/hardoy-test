@@ -5,6 +5,6 @@ export const GlobalStyle = createGlobalStyle`
     margin: 0;
     padding: 0;
     background: white;
-    font-family: "" ,"Lato","Open-Sans", Helvetica, Sans-Serif;
+    font-family: "Lato","Open-Sans", Helvetica, Sans-Serif;
   }
 `;

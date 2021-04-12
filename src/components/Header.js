@@ -35,6 +35,9 @@ const StyledHeader = styled.div`
       margin-bottom: 140px;
     }
   }
+  @media (max-width: 375px) {
+    font-size: 22px;
+  }
   img {
     position: absolute;
     top: 20px;

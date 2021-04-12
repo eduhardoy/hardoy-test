@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { AccordionSummary } from "@material-ui/core";
 
 export const InfoWrapper = styled.div`
   width: 100%;
@@ -9,25 +10,20 @@ export const InfoWrapper = styled.div`
   background-color: #fafafa;
 `;
 
-export const ListDetails = styled.div`
-  width: 100%;
-  padding-left: 40px;
-  img {
-    min-width: 200px;
-    max-width: 300px;
-  }
-  p {
-    font-size: 20px;
-    font-family: "Roboto";
-  }
-`;
-
 export const ButtonWrapper = styled.div`
-  width: 50%;
+  width: calc(60% - 100px);
   padding: 50px;
   display: flex;
   justify-content: center;
   align-items: center;
+  @media (max-width: 1024px) {
+    width: calc(80% - 100px);
+  padding: 20px;
+  }
+  @media (max-width: 600px) {
+    width: calc(100% - 50px);
+  padding: 10px;
+  }
 `;
 
 export const ActiveButton = styled.button`
@@ -58,6 +54,12 @@ export const ActiveButton = styled.button`
     margin: 0;
     padding: 0;
     padding-left: 10px;
+    @media (max-width: 600px) {
+    font-size: 15px;
+  }
+  }
+  @media (max-width: 600px) {
+    width: 40%;
   }
 `;
 
@@ -89,6 +91,62 @@ export const RetiredButton = styled.button`
     margin: 0;
     padding: 0;
     padding-left: 10px;
+    @media (max-width: 600px) {
+    font-size: 15px;
+  }
+  }
+  @media (max-width: 600px) {
+    width: 40%;
+  }
+`;
+
+export const AccordionWrapper = styled.div`
+  width: 60%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  div {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+  }
+  @media (max-width: 1024px) {
+    width: 80%;
+  }
+  @media (max-width: 600px) {
+    width: 90%;
+  }
+`;
+
+export const StyledAccordionSummary = styled(AccordionSummary)`
+  display: flex;
+  align-items: center;
+  height: 120px;
+  h2 {
+    text-align: center;
+    display: flex;
+    align-items: center;
+    font-size: 30px;
+    font-family: "Roboto";
+    font-weight: 500;
+    text-transform: uppercase;
+  }
+`;
+
+export const ListDetails = styled.div`
+  width: 100%;
+  padding-left: 40px;
+  img {
+    min-width: 200px;
+    max-width: 300px;
+  }
+  p {
+    font-size: 20px;
+    font-family: "Roboto";
   }
 `;
 
@@ -116,20 +174,7 @@ export const NumberButton = styled.button`
     border: 3px solid #b1b3b6;
     background-color: #23272b;
   }
-`;
-
-export const AccordionWrapper = styled.div`
-  width: 60%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  div {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    text-align: center;
+  @media (max-width: 600px) {
+    font-size: 12px;
   }
 `;
