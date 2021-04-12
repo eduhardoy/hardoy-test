@@ -134,12 +134,17 @@ export const StyledAccordionSummary = styled(AccordionSummary)`
     font-family: "Roboto";
     font-weight: 500;
     text-transform: uppercase;
+    @media (max-width: 600px) {
+    font-size: 25px;
+  }
+  }
+  @media (max-width: 600px) {
+    height: 100px;
   }
 `;
 
 export const ListDetails = styled.div`
   width: 100%;
-  padding-left: 40px;
   img {
     min-width: 200px;
     max-width: 300px;
