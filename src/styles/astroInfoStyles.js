@@ -18,11 +18,11 @@ export const ButtonWrapper = styled.div`
   align-items: center;
   @media (max-width: 1024px) {
     width: calc(80% - 100px);
-  padding: 20px;
+    padding: 20px;
   }
   @media (max-width: 600px) {
     width: calc(100% - 50px);
-  padding: 10px;
+    padding: 10px;
   }
 `;
 
@@ -55,8 +55,8 @@ export const ActiveButton = styled.button`
     padding: 0;
     padding-left: 10px;
     @media (max-width: 600px) {
-    font-size: 15px;
-  }
+      font-size: 15px;
+    }
   }
   @media (max-width: 600px) {
     width: 40%;
@@ -92,8 +92,8 @@ export const RetiredButton = styled.button`
     padding: 0;
     padding-left: 10px;
     @media (max-width: 600px) {
-    font-size: 15px;
-  }
+      font-size: 15px;
+    }
   }
   @media (max-width: 600px) {
     width: 40%;
@@ -135,8 +135,8 @@ export const StyledAccordionSummary = styled(AccordionSummary)`
     font-weight: 500;
     text-transform: uppercase;
     @media (max-width: 600px) {
-    font-size: 25px;
-  }
+      font-size: 25px;
+    }
   }
   @media (max-width: 600px) {
     height: 100px;

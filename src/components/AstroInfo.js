@@ -15,7 +15,6 @@ import {
   NumberButton,
 } from "../styles/astroInfoStyles";
 
-
 export default function AstroInfo() {
   const [astro, setAstro] = useState({});
   const [queries, setQueries] = useState("");
@@ -62,10 +61,18 @@ export default function AstroInfo() {
             <AccordionDetails>
               <ListDetails>
                 <img src={item.profile_image} alt='' />
-                <p><strong>Name:</strong> {item.name}</p>
-                <p><strong>Date of Birth:</strong> {item.date_of_birth}</p>
-                <p><strong>Nationality:</strong> {item.nationality}</p>
-                <p><strong>Agency:</strong> {item.agency.name}</p>
+                <p>
+                  <strong>Name:</strong> {item.name}
+                </p>
+                <p>
+                  <strong>Date of Birth:</strong> {item.date_of_birth}
+                </p>
+                <p>
+                  <strong>Nationality:</strong> {item.nationality}
+                </p>
+                <p>
+                  <strong>Agency:</strong> {item.agency.name}
+                </p>
               </ListDetails>
             </AccordionDetails>
           </Accordion>

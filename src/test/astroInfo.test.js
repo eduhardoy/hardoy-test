@@ -1,9 +1,9 @@
 import React from "react";
-import {screen, render } from "@testing-library/react";
-import '@testing-library/jest-dom'
+import { screen, render } from "@testing-library/react";
+import "@testing-library/jest-dom";
 import AstroInfo from "../components/AstroInfo";
 
-beforeEach(() => render(<AstroInfo/>))
+beforeEach(() => render(<AstroInfo />));
 
 describe("AstroInfo", () => {
   test("Should Render AstroInfo Component", () => {
